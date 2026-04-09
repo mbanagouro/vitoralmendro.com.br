@@ -3,7 +3,8 @@
     "allow": [
       "Bash(python skills/ui-ux-pro-max/scripts/search.py \"sports nutrition institutional website landing page professional\" --design-system -p \"Vitor Almendro\")",
       "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"sports nutrition institutional website landing page professional\" --design-system -p \"Vitor Almendro\")",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(git -C /c/Projetos/Github/mbanagouro/vitoralmendro.com.br show a5e25bc:src/pages/Home.tsx)"
     ]
   }
 }

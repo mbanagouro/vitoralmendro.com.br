@@ -16,7 +16,7 @@ import {
   Star,
   Award,
 } from "lucide-react";
-import logoSvg from "../../resources/logo.svg";
+import logoSvg from "../../resources/logo-2026.svg";
 import fotoVitor from "../../resources/foto-2.jpeg";
 import ebookCover from "../../resources/capa-ebook-doces.png";
 
@@ -145,13 +145,11 @@ const Hero = () => (
         {/* Copy */}
         <div className="max-w-4xl">
           <p className="text-secondary font-semibold text-sm md:text-base tracking-widest uppercase mb-4 animate-fade-up">
-            Nutrição Esportiva • Vitor Almendro
+            Vitor Almendro
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl leading-none mb-6 animate-fade-up">
-            CONSULTOR DE{" "}
-            <span className="text-gradient">NUTRIÇÃO</span>
-            <br />
-            ESPORTIVA
+            NUTRIÇÃO ESPORTIVA{" "}
+            <span className="text-gradient">E FISIOLOGIA</span>
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto mb-8 animate-fade-up-delay">
             15 anos de experiência, associando a nutrição esportiva e a fisiologia,
@@ -289,7 +287,7 @@ const About = () => (
             <div className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl" />
             <img
               src={fotoVitor}
-              alt="Vitor Almendro — Consultor de Nutrição Esportiva"
+              alt="Vitor Almendro — Nutricionista Esportivo"
               className="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl border-2 border-primary/30"
             />
           </div>
@@ -302,7 +300,7 @@ const About = () => (
             VITOR <span className="text-gradient">ALMENDRO</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Consultor de nutrição esportiva com{" "}
+            Nutricionista esportivo com{" "}
             <strong className="text-foreground">mais de 15 anos de experiência</strong>, associando
             a nutrição esportiva e a fisiologia para transformar a vida de atletas amadores e
             profissionais.

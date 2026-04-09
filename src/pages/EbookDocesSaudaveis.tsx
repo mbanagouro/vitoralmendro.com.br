@@ -5,7 +5,7 @@ import ebookPage2 from "@/assets/ebook-page-2.png";
 import ebookPage3 from "@/assets/ebook-page-3.png";
 import ebookPage4 from "@/assets/ebook-page-4.png";
 
-const CHECKOUT_URL = "#checkout";
+const CHECKOUT_URL = "https://pay.kiwify.com.br/0yt6i0B";
 
 const CTAButton = ({ className = "" }: { className?: string }) => (
   <a
