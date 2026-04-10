@@ -10,7 +10,6 @@ import {
   Users,
   Pill,
   TrendingUp,
-  ChevronDown,
   Phone,
   Instagram,
   Star,
@@ -49,9 +48,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo placeholder — logo moved to hero */}
           <a href="#inicio" className="flex items-center gap-2 cursor-pointer">
-            <img src={logoSvg} alt="Vitor Almendro" className="h-10 w-auto" />
+            <span className="text-sm font-bold text-foreground tracking-widest uppercase">Vitor Almendro</span>
           </a>
 
           {/* Desktop links */}
@@ -144,17 +143,13 @@ const Hero = () => (
       <div className="flex flex-col items-center text-center">
         {/* Copy */}
         <div className="max-w-4xl">
-          <p className="text-secondary font-semibold text-sm md:text-base tracking-widest uppercase mb-4 animate-fade-up">
-            Vitor Almendro
-          </p>
+          <div className="flex justify-center mb-6 animate-fade-up">
+            <img src={logoSvg} alt="Vitor Almendro" className="h-20 md:h-24 w-auto" />
+          </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl leading-none mb-6 animate-fade-up">
             NUTRICIONISTA ESPORTIVO{" "}
             <span className="text-gradient">E FISIOLOGIA</span>
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto mb-8 animate-fade-up-delay">
-            15 anos de experiência, associando a nutrição esportiva e a fisiologia,
-            para transformar a vida de atletas amadores e profissionais.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up-delay-2">
             <a
               href={WHATSAPP_URL}
@@ -172,24 +167,7 @@ const Hero = () => (
               Ver Serviços
             </a>
           </div>
-          {/* Stats */}
-          <div className="flex flex-wrap gap-8 justify-center mt-10 animate-fade-up-delay-2">
-            {[
-              { value: "15+", label: "Anos de experiência" },
-              { value: "30k+", label: "Pacientes atendidos" },
-              { value: "100%", label: "Foco em resultado" },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-3xl md:text-4xl text-gradient">{s.value}</p>
-                <p className="text-muted-foreground text-xs mt-1">{s.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-muted-foreground">
-        <ChevronDown size={32} />
       </div>
     </div>
   </section>
@@ -371,7 +349,7 @@ const EbookCTA = () => (
               to="/ebook-doces-saudaveis"
               className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-lg px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
             >
-              Conhecer o E-book — R$ 29,90
+              Conhecer o E-book
             </Link>
           </div>
         </div>

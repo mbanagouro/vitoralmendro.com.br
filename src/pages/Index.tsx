@@ -14,7 +14,7 @@ const CTAButton = ({ className = "" }: { className?: string }) => (
     rel="noopener noreferrer"
     className={`inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg md:text-xl px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 animate-pulse-slow shadow-lg glow-primary ${className}`}
   >
-    QUERO MEU EBOOK — R$ 29,90
+    QUERO MEU EBOOK
   </a>
 );
 
@@ -208,11 +208,6 @@ const FinalCTA = () => (
       </p>
 
       <div className="bg-card border border-primary/30 rounded-2xl p-8 md:p-12 max-w-lg mx-auto mb-8 glow-primary">
-        <p className="text-muted-foreground line-through text-lg mb-2">De R$ 67,00</p>
-        <p className="text-5xl md:text-7xl text-foreground mb-2">
-          R$ <span className="text-gradient">29,90</span>
-        </p>
-        <p className="text-muted-foreground text-sm mb-8">Pagamento único • Acesso vitalício</p>
         <CTAButton className="w-full text-center" />
       </div>
 

@@ -1,4 +1,4 @@
-import { Zap, Dumbbell, Clock, ShieldCheck, Flame, Star, ChevronDown } from "lucide-react";
+import { Zap, Dumbbell, Clock, ShieldCheck, Flame, Star, ChevronDown, Award, TrendingUp } from "lucide-react";
 import ebookCover from "@/assets/ebook-cover.png";
 import fotoVitor from "@/assets/foto-vitor.jpeg";
 import ebookPage2 from "@/assets/ebook-page-2.png";
@@ -14,7 +14,7 @@ const CTAButton = ({ className = "" }: { className?: string }) => (
     rel="noopener noreferrer"
     className={`inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg md:text-xl px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 animate-pulse-slow shadow-lg glow-primary ${className}`}
   >
-    QUERO MEU EBOOK — R$ 29,90
+    QUERO MEU EBOOK
   </a>
 );
 
@@ -131,21 +131,40 @@ const About = () => (
         </div>
         <div className="text-center lg:text-left">
           <p className="text-secondary font-semibold text-sm tracking-widest uppercase mb-3">
-            Quem criou essas receitas
+            Sobre mim
           </p>
           <h2 className="text-4xl md:text-5xl mb-4">
             VITOR <span className="text-gradient">ALMENDRO</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Nutricionista esportivo com <strong className="text-foreground">mais de 12 anos de experiência</strong> e 
-            mais de <strong className="text-foreground">10 mil pacientes atendidos</strong>. 
-            Especialista em transformar a alimentação de quem treina pesado em algo 
-            <strong className="text-secondary"> prático, saboroso e com resultado real</strong>.
+            Nutricionista esportivo com{" "}
+            <strong className="text-foreground">mais de 15 anos de experiência</strong>, associando
+            a nutrição esportiva e a fisiologia para transformar a vida de atletas amadores e
+            profissionais.
           </p>
-          <p className="text-muted-foreground text-lg">
-            "Meu objetivo é provar que comer bem não precisa ser sacrifício. 
-            <strong className="text-foreground"> Cada receita desse e-book foi pensada pra dar energia, prazer e resultado.</strong>"
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+            Mais de{" "}
+            <strong className="text-foreground">30 mil pacientes atendidos</strong> e
+            especialista em criar estratégias nutricionais que entregam{" "}
+            <strong className="text-secondary">resultados reais e duradouros</strong>.
           </p>
+
+          {/* Credentials */}
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+            {[
+              { icon: Award, label: "CRN Registrado" },
+              { icon: Star, label: "Especialista Esportivo" },
+              { icon: TrendingUp, label: "Fisiologia do Exercício" },
+            ].map((c) => (
+              <span
+                key={c.label}
+                className="inline-flex items-center gap-2 bg-card border border-border px-3 py-2 rounded-lg text-sm text-muted-foreground"
+              >
+                <c.icon size={14} className="text-primary" />
+                {c.label}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -208,11 +227,6 @@ const FinalCTA = () => (
       </p>
 
       <div className="bg-card border border-primary/30 rounded-2xl p-8 md:p-12 max-w-lg mx-auto mb-8 glow-primary">
-        <p className="text-muted-foreground line-through text-lg mb-2">De R$ 67,00</p>
-        <p className="text-5xl md:text-7xl text-foreground mb-2">
-          R$ <span className="text-gradient">29,90</span>
-        </p>
-        <p className="text-muted-foreground text-sm mb-8">Pagamento único • Acesso vitalício</p>
         <CTAButton className="w-full text-center" />
       </div>
 
