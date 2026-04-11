@@ -148,7 +148,7 @@ const Hero = () => (
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl leading-none mb-6 animate-fade-up">
             NUTRICIONISTA ESPORTIVO{" "}
-            <span className="text-gradient">E FISIOLOGIA</span>
+            <span className="text-gradient">E ESPECIALISTA EM FISIOLOGIA</span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up-delay-2">
             <a
