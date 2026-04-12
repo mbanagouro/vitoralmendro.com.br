@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Zap, Dumbbell, Clock, ShieldCheck, Flame, Star, ChevronDown, Award, TrendingUp } from "lucide-react";
 import ebookCover from "@/assets/ebook-cover.png";
 import fotoVitor from "@/assets/foto-vitor.jpeg";
@@ -261,15 +262,37 @@ const Footer = () => (
 );
 
 /* ─── PAGE ─── */
-const EbookDocesSaudaveis = () => (
-  <main className="overflow-hidden">
-    <Hero />
-    <ProblemSolution />
-    <About />
-    <RecipePreview />
-    <FinalCTA />
-    <Footer />
-  </main>
-);
+const EbookDocesSaudaveis = () => {
+  useEffect(() => {
+    const prevTitle = document.title;
+    const prevDesc = document.querySelector('meta[name="description"]')?.getAttribute("content") ?? "";
+    const prevCanonical = document.querySelector('link[rel="canonical"]')?.getAttribute("href") ?? "";
+
+    document.title = "Ebook de Doces que Não Engordam | Receitas Fitness Saudáveis - Vitor Almendro";
+
+    const descTag = document.querySelector('meta[name="description"]');
+    if (descTag) descTag.setAttribute("content", "Ebook com receitas de doces fitness que não engordam, criado pelo nutricionista esportivo Vitor Almendro. Doces saudáveis, saborosos e que cabem na sua dieta. Acesso imediato.");
+
+    const canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (canonicalTag) canonicalTag.setAttribute("href", "https://vitoralmendro.com.br/ebook-doces-saudaveis");
+
+    return () => {
+      document.title = prevTitle;
+      if (descTag) descTag.setAttribute("content", prevDesc);
+      if (canonicalTag) canonicalTag.setAttribute("href", prevCanonical);
+    };
+  }, []);
+
+  return (
+    <main className="overflow-hidden">
+      <Hero />
+      <ProblemSolution />
+      <About />
+      <RecipePreview />
+      <FinalCTA />
+      <Footer />
+    </main>
+  );
+};
 
 export default EbookDocesSaudaveis;
