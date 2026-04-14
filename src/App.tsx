@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import Home from "./pages/Home.tsx";
 import EbookDocesSaudaveis from "./pages/EbookDocesSaudaveis.tsx";
+import EbookReceitasSaudaveis from "./pages/EbookReceitasSaudaveis.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/ebook-doces-saudaveis" element={<EbookDocesSaudaveis />} />
+          <Route path="/ebook-receitas-saudaveis" element={<EbookReceitasSaudaveis />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

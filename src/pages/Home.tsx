@@ -14,10 +14,12 @@ import {
   Instagram,
   Star,
   Award,
+  ChevronDown,
 } from "lucide-react";
 import logoSvg from "../../resources/logo-2026.svg";
 import fotoVitor from "../../resources/foto-2.jpeg";
 import ebookCover from "../../resources/capa-ebook-doces.png";
+import ebookReceitasCover from "@/assets/ebook-cover-01.png";
 
 const WHATSAPP_URL =
   "https://api.whatsapp.com/send?phone=554396748070&text=Ol%C3%A1%2C%20estou%20no%20site%20do%20Vitor%20Almendro%20e%20estou%20interessado(a)%20no%20atendimento%20*Presencial%20ou%20Online*";
@@ -26,6 +28,7 @@ const WHATSAPP_URL =
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -64,12 +67,45 @@ const Navbar = () => {
                 {l.label}
               </a>
             ))}
-            <Link
-              to="/ebook-doces-saudaveis"
-              className="text-sm font-medium text-secondary hover:text-secondary/80 transition-colors duration-200"
+
+            {/* Produtos dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setProductsOpen(true)}
+              onMouseLeave={() => setProductsOpen(false)}
             >
-              Produtos
-            </Link>
+              <button
+                onClick={() => setProductsOpen((v) => !v)}
+                className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-secondary/80 transition-colors duration-200 cursor-pointer"
+              >
+                Produtos
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {productsOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 pt-2 z-50">
+                <div className="bg-background border border-border rounded-lg shadow-lg py-2">
+                  <Link
+                    to="/ebook-doces-saudaveis"
+                    onClick={() => setProductsOpen(false)}
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                  >
+                    Ebook Doces Saudáveis
+                  </Link>
+                  <Link
+                    to="/ebook-receitas-saudaveis"
+                    onClick={() => setProductsOpen(false)}
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                  >
+                    Ebook Receitas Saudáveis
+                  </Link>
+                </div>
+                </div>
+              )}
+            </div>
+
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -106,12 +142,22 @@ const Navbar = () => {
                 {l.label}
               </a>
             ))}
+            <span className="text-xs font-semibold text-secondary tracking-widest uppercase px-0">
+              Produtos
+            </span>
             <Link
               to="/ebook-doces-saudaveis"
               onClick={() => setOpen(false)}
-              className="text-base font-medium text-secondary"
+              className="text-base font-medium text-muted-foreground hover:text-foreground pl-3 border-l border-border transition-colors"
             >
-              Produtos
+              Ebook Doces Saudáveis
+            </Link>
+            <Link
+              to="/ebook-receitas-saudaveis"
+              onClick={() => setOpen(false)}
+              className="text-base font-medium text-muted-foreground hover:text-foreground pl-3 border-l border-border transition-colors"
+            >
+              Ebook Receitas Saudáveis
             </Link>
             <a
               href={WHATSAPP_URL}
@@ -317,37 +363,73 @@ const EbookCTA = () => (
   <section className="py-20 md:py-28 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
     <div className="container mx-auto px-4 relative z-10">
-      <div className="bg-card border border-primary/30 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto glow-primary">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Ebook cover */}
-          <div className="flex-shrink-0">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-secondary/20 rounded-xl blur-2xl" />
-              <img
-                src={ebookCover}
-                alt="E-book Doces Fitness — Receitas Saudáveis"
-                className="relative w-48 md:w-56 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
+      <div className="text-center mb-12">
+        <p className="text-secondary font-semibold text-sm tracking-widest uppercase mb-4">
+          Produtos Digitais
+        </p>
+        <h2 className="text-4xl md:text-5xl mb-4">
+          NOSSOS <span className="text-gradient">E-BOOKS</span>
+        </h2>
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Conhecimento prático de Vitor Almendro em formato digital para transformar sua alimentação.
+        </p>
+      </div>
 
-          {/* Copy */}
-          <div className="text-center md:text-left">
-            <p className="text-secondary font-semibold text-sm tracking-widest uppercase mb-3">
-              Novo e-book
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Doces Saudáveis */}
+        <div className="bg-card border border-primary/30 rounded-2xl p-8 glow-primary flex flex-col items-center text-center gap-6">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-secondary/20 rounded-xl blur-2xl" />
+            <img
+              src={ebookCover}
+              alt="E-book Doces Fitness — Receitas Saudáveis"
+              className="relative w-44 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="flex flex-col items-center">
+            <p className="text-secondary font-semibold text-sm tracking-widest uppercase mb-2">
+              E-book
             </p>
-            <h2 className="text-3xl md:text-5xl mb-4">
+            <h3 className="text-2xl md:text-3xl mb-3">
               DOCES <span className="text-gradient">SAUDÁVEIS</span>
-              <br />
-              QUE TURBINM SEU TREINO
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg mb-6 leading-relaxed">
-              Receitas fitness deliciosas criadas por Vitor Almendro para dar energia,
-              saciar a vontade de doce e manter seu corpo em alta performance.
+            </h3>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              Receitas fitness deliciosas para dar energia, saciar a vontade de doce e manter seu
+              corpo em alta performance.
             </p>
             <Link
               to="/ebook-doces-saudaveis"
-              className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-lg px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
+            >
+              Conhecer o E-book
+            </Link>
+          </div>
+        </div>
+
+        {/* Receitas Saudáveis */}
+        <div className="bg-card border border-border rounded-2xl p-8 flex flex-col items-center text-center gap-6 hover:border-primary/30 transition-colors duration-300">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-primary/20 rounded-xl blur-2xl" />
+            <img
+              src={ebookReceitasCover}
+              alt="E-Receitas — Nutrição Esportiva por Vitor Almendro"
+              className="relative w-44 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="flex flex-col items-center">
+            <p className="text-secondary font-semibold text-sm tracking-widest uppercase mb-2">
+              Novo E-book
+            </p>
+            <h3 className="text-2xl md:text-3xl mb-3">
+              RECEITAS <span className="text-gradient">SAUDÁVEIS</span>
+            </h3>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              Uma curadoria completa de receitas nutritivas e saborosas para complementar sua
+              rotina fitness e potencializar seus resultados.
+            </p>
+            <Link
+              to="/ebook-receitas-saudaveis"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
             >
               Conhecer o E-book
             </Link>
@@ -425,6 +507,9 @@ const Footer = () => (
         <div className="flex gap-6 text-xs">
           <Link to="/ebook-doces-saudaveis" className="hover:text-foreground transition-colors">
             Ebook Doces Saudáveis
+          </Link>
+          <Link to="/ebook-receitas-saudaveis" className="hover:text-foreground transition-colors">
+            Ebook Receitas Saudáveis
           </Link>
           <a
             href={WHATSAPP_URL}
