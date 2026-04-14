@@ -150,14 +150,14 @@ const Navbar = () => {
               onClick={() => setOpen(false)}
               className="text-base font-medium text-muted-foreground hover:text-foreground pl-3 border-l border-border transition-colors"
             >
-              Ebook Doces Saudáveis
+              E-BOOK Doces Saudáveis
             </Link>
             <Link
               to="/ebook-receitas-saudaveis"
               onClick={() => setOpen(false)}
               className="text-base font-medium text-muted-foreground hover:text-foreground pl-3 border-l border-border transition-colors"
             >
-              Ebook Receitas Saudáveis
+              E-BOOK Receitas Saudáveis
             </Link>
             <a
               href={WHATSAPP_URL}
@@ -418,7 +418,7 @@ const EbookCTA = () => (
           </div>
           <div className="flex flex-col items-center">
             <p className="text-secondary font-semibold text-sm tracking-widest uppercase mb-2">
-              Novo E-book
+              E-book
             </p>
             <h3 className="text-2xl md:text-3xl mb-3">
               RECEITAS <span className="text-gradient">SAUDÁVEIS</span>

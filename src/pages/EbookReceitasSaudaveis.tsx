@@ -10,7 +10,7 @@ const CTAButton = ({ className = "" }: { className?: string }) => (
     href={CHECKOUT_URL}
     className={`inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg md:text-xl px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 animate-pulse-slow shadow-lg glow-primary ${className}`}
   >
-    QUERO MEU E-RECEITAS
+    QUERO MEU E-BOOK
   </a>
 );
 
@@ -266,7 +266,7 @@ const EbookReceitasSaudaveis = () => {
     const prevDesc = descTag?.getAttribute("content") ?? "";
     const prevCanonical = canonicalTag?.getAttribute("href") ?? "";
 
-    document.title = "E-Receitas | Receitas Saudáveis para Performance - Vitor Almendro";
+    document.title = "E-Book Receitas Saudáveis | Receitas Fitness Saudáveis - Vitor Almendro";
     descTag?.setAttribute("content", "E-book de receitas saudáveis criado pelo nutricionista esportivo Vitor Almendro. Receitas nutritivas, saborosas e pensadas para quem treina. Acesso imediato.");
     canonicalTag?.setAttribute("href", "https://vitoralmendro.com.br/ebook-receitas-saudaveis");
 
