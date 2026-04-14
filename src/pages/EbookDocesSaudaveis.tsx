@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { Zap, Dumbbell, Clock, ShieldCheck, Flame, Star, ChevronDown, Award, TrendingUp } from "lucide-react";
 import ebookCover from "@/assets/ebook-cover.png";
 import fotoVitor from "@/assets/foto-vitor.jpeg";
-import ebookPage2 from "@/assets/ebook-page-2.png";
-import ebookPage3 from "@/assets/ebook-page-3.png";
-import ebookPage4 from "@/assets/ebook-page-4.png";
+import ebookPage2 from "@/assets/ebook-page-20.png";
+import ebookPage3 from "@/assets/ebook-page-23.png";
+import ebookPage4 from "@/assets/ebook-page-33.png";
 
 const CHECKOUT_URL = "https://pay.kiwify.com.br/0yt6i0B";
 
