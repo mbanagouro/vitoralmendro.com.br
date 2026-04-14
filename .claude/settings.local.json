@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"sports nutrition institutional website landing page professional\" --design-system -p \"Vitor Almendro\")",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"sports nutrition institutional website landing page professional\" --design-system -p \"Vitor Almendro\")",
+      "Bash(npx tsc:*)",
+      "Bash(git -C /c/Projetos/Github/mbanagouro/vitoralmendro.com.br show a5e25bc:src/pages/Home.tsx)",
+      "Bash(grep -rn \"ebook\\\\|R\\\\$\\\\|preço\\\\|preco\\\\|price\\\\|valor\" C:/Projetos/Github/mbanagouro/vitoralmendro.com.br/src --include=\"*.tsx\" --include=\"*.ts\" --include=\"*.jsx\" --include=\"*.js\" -i)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
