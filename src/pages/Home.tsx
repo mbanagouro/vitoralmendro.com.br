@@ -22,7 +22,7 @@ import ebookCover from "../../resources/capa-ebook-doces.png";
 import ebookReceitasCover from "@/assets/ebook-cover-01.png";
 
 const WHATSAPP_URL =
-  "https://api.whatsapp.com/send?phone=554396748070&text=Ol%C3%A1%2C%20estou%20no%20site%20do%20Vitor%20Almendro%20e%20estou%20interessado(a)%20no%20atendimento%20*Presencial%20ou%20Online*";
+  "https://api.whatsapp.com/send?phone=5543991935230&text=Ol%C3%A1%2C%20estou%20no%20site%20do%20Vitor%20Almendro%20e%20estou%20interessado(a)%20no%20atendimento%20*Presencial%20ou%20Online*";
 
 /* ─── NAVBAR ─── */
 const Navbar = () => {
@@ -479,7 +479,7 @@ const Contact = () => (
           className="flex items-center gap-2 hover:text-foreground transition-colors cursor-pointer"
         >
           <Phone size={16} className="text-secondary" />
-          (43) 9674-8070
+          (43) 99193-5230
         </a>
         <a
           href="https://www.instagram.com/vitoralmendro"
